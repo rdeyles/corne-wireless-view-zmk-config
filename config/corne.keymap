@@ -17,14 +17,14 @@
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+            //                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
 
             display-name = "Base";
             bindings = <
 &kp ESCAPE  &kp Q  &kp W  &kp F         &kp P  &kp G                   &kp J                 &kp L  &kp U         &kp Y    &kp BACKSPACE  &kp C_VOLUME_UP
 &kp TAB     &kp A  &kp R  &kp S         &kp T  &kp D                   &kp H                 &kp N  &kp E         &kp I    &kp O          &kp C_VOLUME_DOWN
 &kp DEL     &kp Z  &kp X  &kp C         &kp V  &kp B                   &kp K                 &kp M  &kp COMMA     &kp DOT  &kp FSLH       &kp C_MUTE
-                          &kp LEFT_ALT  &mo 1  &mt LEFT_SHIFT SPACE    &mt LEFT_CONTROL RET  &mo 2  &kp LEFT_GUI
+                          &kp LEFT_ALT  &mo 1  &mt LEFT_SHIFT RET    &mt LEFT_CONTROL SPACE  &mo 2  &kp LEFT_GUI
             >;
         };
 
@@ -33,7 +33,7 @@
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            //                    | GUI |     | ENT |   | SPC |     | ALT |
 
             display-name = "Lower";
             bindings = <
@@ -49,7 +49,7 @@
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
             // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            //                    | GUI |     | ENT |   | SPC |     | ALT |
 
             display-name = "Raise";
             bindings = <
