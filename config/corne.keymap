@@ -10,15 +10,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    macros {
-        new_macro: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(S) &kp T &kp R &kp E &kp N &kp G &kp T &kp H &kp MINUS &kp LS(B) &kp E &kp F &kp N0 &kp R &kp E &kp MINUS &kp LS(W) &kp E &kp AT &kp K &kp N &kp E &kp S &kp S>;
-            label = "NEW_MACRO";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
