@@ -10,36 +10,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    macros {
-        next_tab_windows: next_tab_windows {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp TAB>;
-            label = "NEXT_TAB_WINDOWS";
-        };
-
-        previous_tab_windows: previous_tab_windows {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp LEFT_SHIFT &kp TAB>;
-            label = "PREVIOUS_TAB_WINDOWS";
-        };
-
-        next_tab_mac: next_tab_mac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp LEFT_ALT &kp RIGHT>;
-            label = "NEXT_TAB_MAC";
-        };
-
-        previous_tab_mac: previous_tab_mac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp LEFT_ALT &kp LEFT>;
-            label = "PREVIOUS_TAB_MAC";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -53,8 +23,8 @@
             display-name = "Base";
             bindings = <
 &kp ESCAPE  &kp Q  &kp W  &kp F         &kp P  &kp G                    &kp J      &kp L  &kp U           &kp Y    &kp LEFT_ALT   &kp C_VOLUME_UP
-&mkp MB4    &kp A  &kp R  &kp S         &kp T  &kp D                    &kp H      &kp N  &kp E           &kp I    &kp O          &kp C_VOLUME_DOWN
-&mkp MB5    &kp Z  &kp X  &kp C         &kp V  &kp B                    &kp K      &kp M  &kp COMMA       &kp DOT  &kp BACKSPACE  &kp C_MUTE
+&kp TAB     &kp A  &kp R  &kp S         &kp T  &kp D                    &kp H      &kp N  &kp E           &kp I    &kp O          &kp C_VOLUME_DOWN
+&kp DEL     &kp Z  &kp X  &kp C         &kp V  &kp B                    &kp K      &kp M  &kp COMMA       &kp DOT  &kp BACKSPACE  &kp C_MUTE
                           &kp LEFT_GUI  &mo 1  &mt LEFT_SHIFT RETURN    &kp SPACE  &mo 2  &kp LEFT_SHIFT
             >;
         };
@@ -66,7 +36,7 @@
             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    | GUI |     | ENT |   | SPC |     | ALT |
 
-            display-name = "Symbols";
+            display-name = "Lower";
             bindings = <
 &tog 2               &kp GRAVE  &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS  &kp PIPE     &kp CARET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DOLLAR     &kp LS(NUMBER_3)  &trans
 &kp QMARK            &kp EXCL   &kp ASTRK      &kp SLASH         &kp EQUAL  &kp AMPS     &kp POUND  &kp LPAR        &kp RPAR         &kp SEMICOLON  &kp DQT           &trans
@@ -82,12 +52,12 @@
             // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
             //                    | GUI |     | ENT |   | SPC |     | ALT |
 
-            display-name = "NumNav";
+            display-name = "Raise";
             bindings = <
-&bt BT_CLR    &bt BT_SEL 0  &kp N7        &kp N8        &kp N9           &kp ESC         &kp C_BRIGHTNESS_INC  &kp HOME        &kp UP_ARROW      &kp END          &previous_tab_windows  &next_tab_windows
-&bt BT_SEL 1  &bt BT_SEL 2  &kp NUMBER_4  &kp N5        &kp NUMBER_6     &kp TAB         &kp C_BRIGHTNESS_DEC  &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT_ARROW  &previous_tab_mac      &next_tab_mac
-&bt BT_SEL 3  &bt BT_SEL 4  &kp NUMBER_1  &kp NUMBER_2  &kp KP_NUMBER_3  &kp LEFT_ALT    &kp PRINTSCREEN       &kp C_REWIND    &kp C_PLAY_PAUSE  &kp C_FF         &kp DEL                &kp LG(LS(NUMBER_4))
-                                          &kp PERIOD    &kp N0           &trans          &trans                &trans          &trans
+&bt BT_CLR    &bt BT_SEL 0  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(M)    &kp C_BRIGHTNESS_INC  &kp HOME        &kp UP_ARROW      &kp END          &kp LS(LG(NUMBER_4))  &trans
+&bt BT_SEL 1  &bt BT_SEL 2  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp TAB      &kp C_BRIGHTNESS_DEC  &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT_ARROW  &kp LS(B)             &trans
+&bt BT_SEL 3  &bt BT_SEL 4  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp LS(A)    &kp PRINTSCREEN       &kp C_REWIND    &kp C_PLAY_PAUSE  &kp C_FF         &trans                &trans
+                                             &kp KP_NUMBER_0  &kp PERIOD       &trans       &trans                &trans          &kp BACKSPACE
             >;
         };
 
